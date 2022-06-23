@@ -60,7 +60,9 @@ function registroEstable (){
             console.log("OK")
         }
     
-    piezasEnstock = JSON.parse(localStorage.getItem("stockDisponible")); 
+    let registro = JSON.parse(localStorage.getItem("stockDisponible"))
+    registro.forEach(item => {piezasEnstock.push(item)
+    }); 
 }
 
 /// FIN DE CODIGO IMPLEMENTADO EN HTML DE ADMINISTRACION ///
@@ -96,7 +98,7 @@ function cargarCarro(id){
         let str = JSON.stringify(carroVentas)
         localStorage.setItem("DatosVentas", str)
         console.log("Producto Agregado!") 
-        actualizarNro() 
+        actualizarNro()      
 }
 
 actualizarNro()
