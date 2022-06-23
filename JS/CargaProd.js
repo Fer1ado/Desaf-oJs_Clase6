@@ -36,7 +36,7 @@ function cargarProducto(){
     let nombreProd = document.getElementById("form_name").value
     let precioProd = document.getElementById("form_price").value
     let stockProd = document.querySelector("#form_stock").value
-    let imgProducto = "/ASSETS/FOTOS_CATALOGO/placeholder.png"
+    let imgProducto = "../ASSETS/FOTOS_CATALOGO/placeholder.png"
     let descriProd = document.getElementById("form_description").value
     piezasEnstock.push(new PiezasOfrecidas(crearID(), nombreProd, stockProd, precioProd,descriProd,imgProducto))
     let str = JSON.stringify(piezasEnstock)
@@ -48,7 +48,7 @@ function cargarProducto(){
 registroEstable ()
 
 function registroEstable (){
-     let ejecutaUnaVez = localStorage.getItem("chequeo");
+    let ejecutaUnaVez = localStorage.getItem("chequeo");
         if (ejecutaUnaVez!=="true"){
             localStorage.removeItem("chequeo")
             localStorage.setItem("chequeo", true)
@@ -56,13 +56,11 @@ function registroEstable (){
             let str = JSON.stringify(piezasEnstock)
             localStorage.setItem("stockDisponible", str)
         }
-        if(ejecutaUnaVez==="true"){
+        else{
             console.log("OK")
         }
     
-    let registro = JSON.parse(localStorage.getItem("stockDisponible"))
-    registro.forEach(item => {piezasEnstock.push(item)
-    }); 
+    piezasEnstock = JSON.parse(localStorage.getItem("stockDisponible")); 
 }
 
 /// FIN DE CODIGO IMPLEMENTADO EN HTML DE ADMINISTRACION ///
@@ -98,7 +96,7 @@ function cargarCarro(id){
         let str = JSON.stringify(carroVentas)
         localStorage.setItem("DatosVentas", str)
         console.log("Producto Agregado!") 
-        actualizarNro()      
+        actualizarNro() 
 }
 
 actualizarNro()

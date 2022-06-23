@@ -1,7 +1,6 @@
 
 
 
-
 class PiezasOfrecidas {
     constructor(id, nombre, stock, importe, descripcion, imagen) {
         this.id = id
