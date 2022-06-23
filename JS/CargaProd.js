@@ -36,7 +36,7 @@ function cargarProducto(){
     let nombreProd = document.getElementById("form_name").value
     let precioProd = document.getElementById("form_price").value
     let stockProd = document.querySelector("#form_stock").value
-    let imgProducto = "/ASSETS/FOTOS_CATALOGO/placeholder.png"
+    let imgProducto = "../ASSETS/FOTOS_CATALOGO/placeholder.png"
     let descriProd = document.getElementById("form_description").value
     piezasEnstock.push(new PiezasOfrecidas(crearID(), nombreProd, stockProd, precioProd,descriProd,imgProducto))
     let str = JSON.stringify(piezasEnstock)
